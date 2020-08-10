@@ -31,6 +31,7 @@
             this.tab1 = this.Factory.CreateRibbonTab();
             this.grpControls = this.Factory.CreateRibbonGroup();
             this.btnLoad = this.Factory.CreateRibbonButton();
+            this.btnSendEmails = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.grpControls.SuspendLayout();
             this.SuspendLayout();
@@ -45,14 +46,20 @@
             // grpControls
             // 
             this.grpControls.Items.Add(this.btnLoad);
-            this.grpControls.Label = "Adroit Controls";
+            this.grpControls.Items.Add(this.btnSendEmails);
+            this.grpControls.Label = "Controls";
             this.grpControls.Name = "grpControls";
             // 
             // btnLoad
             // 
-            this.btnLoad.Label = "Load";
+            this.btnLoad.Label = "Load Config";
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnLoad_Click);
+            // 
+            // btnSendEmails
+            // 
+            this.btnSendEmails.Label = "Send Emails";
+            this.btnSendEmails.Name = "btnSendEmails";
             // 
             // AdroitRibbon
             // 
@@ -73,5 +80,6 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup grpControls;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnLoad;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnSendEmails;
     }
 }

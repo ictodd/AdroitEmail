@@ -15,7 +15,7 @@ namespace AdroitEmail.Interface {
 
         private void btnLoad_Click(object sender, RibbonControlEventArgs e) {
             var config = new ConfigWindow();
-            config.Show();
+            config.ShowDialog();
         }
     }
 }

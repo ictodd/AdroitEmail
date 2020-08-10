@@ -27,13 +27,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDayToSend = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastSent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvEmails = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmails)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,6 +48,7 @@
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnRemove
             // 
@@ -63,59 +59,23 @@
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvEmails
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
-            this.colName,
-            this.colTo,
-            this.colDayToSend,
-            this.colLastSent});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(544, 327);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // colID
-            // 
-            this.colID.Frozen = true;
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.Frozen = true;
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colTo
-            // 
-            this.colTo.Frozen = true;
-            this.colTo.HeaderText = "To";
-            this.colTo.Name = "colTo";
-            this.colTo.ReadOnly = true;
-            // 
-            // colDayToSend
-            // 
-            this.colDayToSend.HeaderText = "Send Day";
-            this.colDayToSend.Name = "colDayToSend";
-            this.colDayToSend.ReadOnly = true;
-            // 
-            // colLastSent
-            // 
-            this.colLastSent.HeaderText = "Last Sent";
-            this.colLastSent.Name = "colLastSent";
-            this.colLastSent.ReadOnly = true;
+            this.dgvEmails.AllowUserToAddRows = false;
+            this.dgvEmails.AllowUserToDeleteRows = false;
+            this.dgvEmails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmails.Location = new System.Drawing.Point(15, 45);
+            this.dgvEmails.Name = "dgvEmails";
+            this.dgvEmails.Size = new System.Drawing.Size(547, 311);
+            this.dgvEmails.TabIndex = 3;
+            this.dgvEmails.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmails_CellDoubleClick);
             // 
             // ConfigWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 411);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvEmails);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
@@ -124,7 +84,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ConfigWindow";
             this.Text = "Adriot Email Config";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,11 +95,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDayToSend;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLastSent;
+        private System.Windows.Forms.DataGridView dgvEmails;
     }
 }
